@@ -50,9 +50,9 @@ def test_case_analysis():
     """测试案例分析"""
     print("\n=== 测试: 案例分析 ===")
     
-    analysis = analyze_case("CASE20240001")
+    analysis = analyze_case("case_001")
     assert analysis is not None
-    print(f"✅ 案例分析成功")
+    print("✅ 案例分析成功")
     
     return True
 

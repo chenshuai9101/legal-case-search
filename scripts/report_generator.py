@@ -6,7 +6,7 @@ Legal Case Search Report Generator
 """
 
 from datetime import datetime
-from typing import Dict, List, Optional, Any
+from typing import Dict, List
 import uuid
 
 
@@ -134,7 +134,7 @@ class ReportGenerator:
         medium_sim = len([c for c in case_list if 50 <= c.get('similar_score', 0) < 80])
         low_sim = len([c for c in case_list if c.get('similar_score', 0) < 50])
         
-        report += f"| 相似度等级 | 数量 | 占比 |\n|---------|------|------|\n"
+        report += "| 相似度等级 | 数量 | 占比 |\n|---------|------|------|\n"
         report += f"| 高相似度 (≥80%) | {high_sim} | {high_sim/len(case_list)*100:.1f}% |\n"
         report += f"| 中相似度 (50-80%) | {medium_sim} | {medium_sim/len(case_list)*100:.1f}% |\n"
         report += f"| 低相似度 (<50%) | {low_sim} | {low_sim/len(case_list)*100:.1f}% |\n"
@@ -167,7 +167,7 @@ class ReportGenerator:
             for j, point in enumerate(case.get('key_points', []), 1):
                 report += f"{j}. {point}\n"
             
-            report += f"""
+            report += """
 **适用法律分析**  
 本案体现了以下法律原则：
 - 合同严守原则
